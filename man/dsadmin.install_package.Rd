@@ -9,6 +9,10 @@
 
   \item{pkg}{Package name.}
 
+  \item{githubusername}{GitHub username of git repository.
+  If NULL (default), try to install from Datashield package
+  repository.}
+
   \item{ref}{Desired git reference (could be a commit, tag,
   or branch name). If NULL (default), try to install from
   Datashield package repository.}

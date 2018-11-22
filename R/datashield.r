@@ -67,16 +67,18 @@ dsadmin.package_description <- function(opal, pkg, fields=NULL) {
 #'
 #' @param opal Opal object or list of opal objects. 
 #' @param pkg Package name.
+#' @param githubusername GitHub username of git repository. If NULL (default), try to install from Datashield package repository. 
 #' @param ref Desired git reference (could be a commit, tag, or branch name). If NULL (default), try to install from Datashield package repository.
 #' @return TRUE if installed
 #' @export
-dsadmin.install_package <- function(opal, pkg, ref=NULL) {
+dsadmin.install_package <- function(opal, pkg, githubusername=NULL, ref=NULL) {
   if(is.list(opal)){
     lapply(opal, function(o){dsadmin.install_package(o, pkg, ref=ref)})
   } else {
-    query <- list(name=pkg)
-    if (!is.null(ref)) {
-      query <- append(query,list(ref=ref))
+    if (! (is.null(ref) || is.null(githubusername))) {
+      query <- list(name=paste(name,pkg,sep="/"),ref=ref)
+    } else {
+      query <- list(name=pkg)
     }
     opal:::.post(opal, "datashield", "packages", query=query)
     dsadmin.installed_package(opal, pkg)

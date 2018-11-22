@@ -76,7 +76,7 @@ dsadmin.install_package <- function(opal, pkg, githubusername=NULL, ref=NULL) {
     lapply(opal, function(o){dsadmin.install_package(o, pkg, githubusername=githubusername, ref=ref)})
   } else {
     if (! (is.null(ref) || is.null(githubusername))) {
-      query <- list(name=paste(name,pkg,sep="/"),ref=ref)
+      query <- list(name=paste(githubusername,pkg,sep="/"),ref=ref)
     } else {
       query <- list(name=pkg)
     }

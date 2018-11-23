@@ -61,7 +61,7 @@ dsadmin.package_description <- function(opal, pkg, fields=NULL) {
   }
 }
 
-#' Install a package from Datashield public package repository or (if Git reference is provided) from Datashield source repository on GitHub.
+#' Install a package from Datashield public package repository or (if Git reference and GitHub username is provided) from Datashield source repository on GitHub.
 #'
 #' @title Install Datashield Package
 #'
@@ -75,7 +75,7 @@ dsadmin.install_package <- function(opal, pkg, githubusername=NULL, ref=NULL) {
   if(is.list(opal)){
     lapply(opal, function(o){dsadmin.install_package(o, pkg, githubusername=githubusername, ref=ref)})
   } else {
-    if (! (is.null(ref) || is.null(githubusername))) {
+    if((!is.null(ref)) && (!is.null(githubusername))) {
       query <- list(name=paste(githubusername,pkg,sep="/"),ref=ref)
     } else {
       query <- list(name=pkg)

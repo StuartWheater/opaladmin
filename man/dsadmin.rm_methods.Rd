@@ -7,9 +7,6 @@
 \arguments{
   \item{opal}{Opal object or list of opal objects.}
 
-  \item{name}{Name of the method, as it is accessed by
-  Datashield users.}
-
   \item{type}{Type of the method: "aggregate" or "assign".
   Default is NULL (=all type of methods).}
 }

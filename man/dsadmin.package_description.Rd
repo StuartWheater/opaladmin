@@ -7,6 +7,8 @@
 \arguments{
   \item{opal}{Opal object or list of opal objects.}
 
+  \item{pkg}{Package name.}
+
   \item{fields}{A character vector giving the fields to
   extract from each package's DESCRIPTION file in addition
   to the default ones, or NULL (default). Unavailable

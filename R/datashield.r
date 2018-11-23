@@ -42,6 +42,7 @@ dsadmin.package_descriptions <- function(opal, fields=NULL) {
 #' @title Get Datashield Package Description
 #'
 #' @param opal Opal object or list of opal objects.
+#' @param pkg Package name.
 #' @param fields A character vector giving the fields to extract from each package's DESCRIPTION file in addition to the default ones, or NULL (default). Unavailable fields result in NA values.
 #' @export
 dsadmin.package_description <- function(opal, pkg, fields=NULL) {
@@ -172,7 +173,6 @@ dsadmin.rm_method <- function(opal, name, type="aggregate") {
 #' @title Remove Datashield Methods
 #' 
 #' @param opal Opal object or list of opal objects.
-#' @param name Name of the method, as it is accessed by Datashield users.
 #' @param type Type of the method: "aggregate" or "assign". Default is NULL (=all type of methods).
 #' @export
 dsadmin.rm_methods <- function(opal, type=NULL) {

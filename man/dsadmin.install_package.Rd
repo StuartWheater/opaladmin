@@ -2,7 +2,7 @@
 \alias{dsadmin.install_package}
 \title{Install Datashield Package}
 \usage{
-  dsadmin.install_package(opal, pkg, ref = NULL)
+  dsadmin.install_package(opal, pkg, githubusername=NULL, ref = NULL)
 }
 \arguments{
   \item{opal}{Opal object or list of opal objects.}
